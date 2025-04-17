@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polygon Generator</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&f[]=cabinet-grotesk@1&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <svg id="svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
+      <polygon id="polygon" />
+    </svg>
+
+    <h1 class="page-title" id="pageTitle">Polygon Generator</h1>
+
+    <div class="controls-bar">
+      <div class="controls">
+        <div class="control-group">
+          <label>Sides</label>
+          <div class="slider-row">
+            <input type="range" id="sides" min="3" max="20" value="6" />
+            <span class="slider-value" id="sidesVal">6</span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Irregularity</label>
+          <div class="slider-row">
+            <input type="range" id="variance" min="0" max="100" value="30" />
+            <span class="slider-value" id="varianceVal">30</span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Jitter</label>
+          <div class="slider-row">
+            <input type="range" id="roughness" min="0" max="50" value="10" />
+            <span class="slider-value" id="roughnessVal">10</span>
+          </div>
+        </div>
+
+        <div class="control-group color-group">
+          <label for="color">Polygon Color</label>
+          <div class="color-inputs">
+            <input type="color" id="color" />
+            <input type="text" id="hexInput" maxlength="6" />
+          </div>
+        </div>
+
+        <div class="control-group color-group">
+          <label for="bgColor">Background</label>
+          <div class="color-inputs">
+            <input type="color" id="bgColor" />
+            <input type="text" id="bgHexInput" maxlength="6" />
+          </div>
+        </div>
+
+        <div class="control-buttons">
+          <button onclick="randomize()">Random</button>
+          <button onclick="downloadSVG()">SVG</button>
+          <button onclick="downloadPNG()">PNG</button>
+          <button id="copyBtn" onclick="copyLink()">Copy Link</button>
+        </div>
+      </div>
+    </div>
+
+    <a class="link" href="https://louis-yau.com" target="_blank">Made by Louis A. Yau</a>
+    <script src="js/script.js"></script>
+  </body>
+</html>
